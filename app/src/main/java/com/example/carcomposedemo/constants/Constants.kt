@@ -25,5 +25,5 @@ object Constants {
     const val CAR_MODEL = "Type a car model..."
     const val CAR_YEAR = "Type a car year..."
     const val CAR_COLOR = "Type a car color..."
-    const val CAR_VALUE = ""
+    const val NO_VALUE = ""
 }
