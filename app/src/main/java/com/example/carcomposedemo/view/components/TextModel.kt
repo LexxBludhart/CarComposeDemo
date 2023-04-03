@@ -9,5 +9,5 @@ import androidx.compose.ui.unit.sp
 fun TextModel(
     carModel: String
 ) {
-    Text(text = carModel, color = Color.DarkGray, fontSize = 24.sp)
+    Text(text = carModel, color = Color.LightGray, fontSize = 24.sp)
 }

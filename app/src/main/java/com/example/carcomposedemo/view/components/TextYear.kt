@@ -9,5 +9,5 @@ import androidx.compose.ui.unit.sp
 fun TextYear(
     carYear: String
 ) {
-    Text(text = carYear, color = Color.DarkGray, fontSize = 24.sp)
+    Text(text = carYear, color = Color.LightGray, fontSize = 24.sp)
 }

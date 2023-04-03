@@ -40,7 +40,7 @@ fun AddCardAlertDialog(
             onDismissRequest = closeDialog,
             title = { Text(text = ADD_CAR) },
             text = {
-                   Column() {
+                   Column {
                        TextField(
                            value = make,
                            onValueChange = { make = it },

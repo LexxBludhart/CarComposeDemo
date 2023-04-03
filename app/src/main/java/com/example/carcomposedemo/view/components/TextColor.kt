@@ -9,5 +9,5 @@ import androidx.compose.ui.unit.sp
 fun TextColor(
     carColor: String
 ) {
-    Text(text = carColor, color = Color.DarkGray, fontSize = 24.sp)
+    Text(text = carColor, color = Color.LightGray, fontSize = 24.sp)
 }
