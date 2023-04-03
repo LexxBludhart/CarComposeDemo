@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.carcomposedemo.constants.Constants.CAR_TABLE
 import com.example.carcomposedemo.model.dao.CarDao
 import com.example.carcomposedemo.model.database.CarDatabase
+import com.example.carcomposedemo.model.repository.CarRepository
 import com.example.carcomposedemo.model.repository.CarRepositoryImpl
 import dagger.Module
 import dagger.Provides
@@ -26,6 +27,6 @@ class AppModule {
     fun provideCarDao(carDatabase: CarDatabase) = carDatabase.carDao()
 
     @Provides
-    fun provideCarRepository(carDao: CarDao) = CarRepositoryImpl(carDao)
+    fun provideCarRepository(carDao: CarDao): CarRepository = CarRepositoryImpl(carDao)
 
 }
