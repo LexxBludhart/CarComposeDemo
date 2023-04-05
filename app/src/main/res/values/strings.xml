@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">CarComposeDemo</string>
+
+    <string name="placeholder_car_make">Car Make</string>
+    <string name="placeholder_car_model">Car Model</string>
+    <string name="placeholder_car_year">Car Year</string>
+    <string name="placeholder_car_color">Car Color</string>
+
+    <string name="button_add">Add</string>
+    <string name="button_dismiss">Dismiss</string>
+    <string name="button_update">Update</string>
+
+    <string name="action_add_car">Add a car</string>
+    <string name="action_delete_car">Delete a Car</string>
+
+    <string name="screen_cars">Cars</string>
+    <string name="screen_update_car">Update Car</string>
 </resources>

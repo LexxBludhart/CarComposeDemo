@@ -11,16 +11,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.carcomposedemo.constants.Constants.ADD_CAR
-import com.example.carcomposedemo.constants.Constants.CAR_COLOR
-import com.example.carcomposedemo.constants.Constants.CAR_MAKE
-import com.example.carcomposedemo.constants.Constants.CAR_MODEL
-import com.example.carcomposedemo.constants.Constants.CAR_YEAR
-import com.example.carcomposedemo.constants.Constants.DISMISS
 import com.example.carcomposedemo.constants.Constants.NO_VALUE
 import com.example.carcomposedemo.model.entity.Car
 import kotlinx.coroutines.job
+import com.example.carcomposedemo.R
 
 @Composable
 fun AddCardAlertDialog(
@@ -38,13 +34,13 @@ fun AddCardAlertDialog(
 
         AlertDialog(
             onDismissRequest = closeDialog,
-            title = { Text(text = ADD_CAR) },
+            title = { Text(text = stringResource(R.string.action_add_car)) },
             text = {
                    Column {
                        TextField(
                            value = make,
                            onValueChange = { make = it },
-                           placeholder = { Text(text = CAR_MAKE) },
+                           placeholder = { Text(text = stringResource(R.string.placeholder_car_make)) },
                            modifier = Modifier.focusRequester(focusRequester)
                        )
 
@@ -58,19 +54,19 @@ fun AddCardAlertDialog(
                        TextField(
                            value = model,
                            onValueChange = { model = it},
-                           placeholder = { Text(text = CAR_MODEL) }
+                           placeholder = { Text(text = stringResource(id = R.string.placeholder_car_model)) }
                            )
                        Spacer(modifier = Modifier.height(16.dp))
                        TextField(
                            value = year,
                            onValueChange = { year = it } ,
-                           placeholder = { Text(text = CAR_YEAR) }
+                           placeholder = { Text(text = stringResource(id = R.string.placeholder_car_year)) }
                            )
                        Spacer(modifier = Modifier.height(16.dp))
                        TextField(
                            value = color,
                            onValueChange = { color = it },
-                           placeholder = { Text(text = CAR_COLOR) }
+                           placeholder = { Text(text = stringResource(id = R.string.placeholder_car_color)) }
                            )
                    }
             },
@@ -79,10 +75,10 @@ fun AddCardAlertDialog(
                 addCar(car)
                 closeDialog()
             }) {
-             Text(text = ADD_CAR)
+             Text(text = stringResource(id = R.string.button_add))
             }},
             dismissButton = { TextButton(onClick = closeDialog) {
-                Text(text = DISMISS)
+                Text(text = stringResource(id = R.string.button_dismiss))
             }}
         )
     }

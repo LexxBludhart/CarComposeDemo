@@ -7,13 +7,16 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.carcomposedemo.view.components.UpdateCarContent
 import com.example.carcomposedemo.view.components.UpdateCarTopBar
 import com.example.carcomposedemo.viewmodel.CarsViewModel
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import dagger.hilt.android.lifecycle.HiltViewModel
 
+@Destination
 @Composable
 fun UpdateCarScreen(
+    navigator: DestinationsNavigator,
     viewModel: CarsViewModel = hiltViewModel(),
     carId: Int,
-    navigateBack: () -> Unit
 ) {
 
     LaunchedEffect(Unit) {
@@ -21,7 +24,7 @@ fun UpdateCarScreen(
     }
 
     Scaffold(
-        topBar = { UpdateCarTopBar(navigateBack) },
+        topBar = { UpdateCarTopBar(navigator = navigator) },
         content = { padding ->
             UpdateCarContent(
                 padding = padding,
@@ -31,7 +34,7 @@ fun UpdateCarScreen(
                 updateYear = { year -> viewModel.updateYear(year) },
                 updateColor = { color -> viewModel.updateColor(color) },
                 updateCar = { car -> viewModel.updateCar(car) },
-                navigateBack = navigateBack
+                navigator = navigator
             )
         }
     )

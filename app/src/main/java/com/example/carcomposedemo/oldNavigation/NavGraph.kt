@@ -1,17 +1,6 @@
-package com.example.carcomposedemo.navigation
+package com.example.carcomposedemo.oldNavigation
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.compose.NavHost
-import androidx.navigation.NavHostController
-import androidx.navigation.NavType
-import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
-import com.example.carcomposedemo.constants.Constants.CAR_ID
-import com.example.carcomposedemo.view.CarsScreen
-import com.example.carcomposedemo.navigation.Destinations.UpdateCarDestination
-import com.example.carcomposedemo.view.UpdateCarScreen
-
-@Composable
+/* @Composable
 fun NavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
@@ -36,3 +25,4 @@ fun NavGraph(navController: NavHostController) {
         }
     }
 }
+ */

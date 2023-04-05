@@ -4,10 +4,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import com.example.carcomposedemo.utilities.TextUtils
 
 @Composable
 fun TextMake(
-    carMake: String
+    carMake: String,
+    carColor: String
 ) {
-    Text(text = carMake, color = Color.Red, fontSize = 36.sp)
+    Text(text = carMake, color = TextUtils.getColorForName(carColor), fontSize = 36.sp)
 }

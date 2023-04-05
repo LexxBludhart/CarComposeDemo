@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
-import com.example.carcomposedemo.navigation.NavGraph
 import com.example.carcomposedemo.ui.theme.CarComposeDemoTheme
+import com.example.carcomposedemo.view.NavGraphs
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.ramcosta.composedestinations.annotation.NavGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +16,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CarComposeDemoTheme {
-                NavGraph(navController = rememberNavController())
+                // TODO: Put this back after invalidating cache and rebuilding
+                DestinationsNavHost(navGraph = NavGraphs.root)
             }
         }
     }

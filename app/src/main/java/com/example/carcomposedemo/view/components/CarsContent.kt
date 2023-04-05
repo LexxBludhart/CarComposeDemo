@@ -10,13 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.carcomposedemo.model.entity.Car
 import com.example.carcomposedemo.model.repository.Cars
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @Composable
 fun CarsContent(
     padding: PaddingValues,
     cars: Cars,
     deleteCar: (car: Car) -> Unit,
-    navigateToUpdateCarScreen: (carId: Int) -> Unit
+    navigator: DestinationsNavigator
 ) {
     LazyColumn(modifier = Modifier
         .fillMaxSize()
@@ -24,8 +25,9 @@ fun CarsContent(
         items(items = cars) {
             CarCard(
                 car = it,
-                deleteCar = { deleteCar(it) }, 
-                navigateTpUpdateScreen = navigateToUpdateCarScreen)
+                deleteCar = { deleteCar(it) },
+                navigator = navigator
+            )
         }
     }
 }

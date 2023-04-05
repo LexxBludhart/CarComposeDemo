@@ -6,7 +6,8 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import com.example.carcomposedemo.constants.Constants.ADD_CAR
+import androidx.compose.ui.res.stringResource
+import com.example.carcomposedemo.R
 
 @Composable
 fun AddCarFloatingActionButton(openDialog: () -> Unit) {
@@ -14,6 +15,6 @@ fun AddCarFloatingActionButton(openDialog: () -> Unit) {
         onClick = openDialog,
         containerColor = MaterialTheme.colorScheme.primary
     ) {
-        Icon(imageVector = Icons.Default.Add, contentDescription = ADD_CAR)
+        Icon(imageVector = Icons.Default.Add, contentDescription = stringResource(id = R.string.action_add_car))
     }
 }

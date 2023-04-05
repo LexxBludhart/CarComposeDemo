@@ -11,11 +11,16 @@ import com.example.carcomposedemo.view.components.AddCardAlertDialog
 import com.example.carcomposedemo.view.components.CarsContent
 import com.example.carcomposedemo.view.components.CarsTopBar
 import com.example.carcomposedemo.viewmodel.CarsViewModel
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
+@RootNavGraph(start = true)
+@Destination
 @Composable
 fun CarsScreen(
-    viewModel: CarsViewModel = hiltViewModel(),
-    navigateToUpdateCarScreen: (carId: Int) -> Unit
+    navigator: DestinationsNavigator,
+    viewModel: CarsViewModel = hiltViewModel()
 ) {
     val cars by viewModel.cars.collectAsState(initial = emptyList())
 
@@ -26,7 +31,7 @@ fun CarsScreen(
             padding = it,
             cars = cars,
             deleteCar = { car -> viewModel.deleteCar(car) },
-            navigateToUpdateCarScreen = navigateToUpdateCarScreen
+            navigator = navigator
         )
             AddCardAlertDialog(
                 isDialogOpen = viewModel.isDialogOpen,
